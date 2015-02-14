@@ -1,4 +1,12 @@
 import sys
+import numpy as np
+
+# Prototypes (Images of 0~4)
+p0 = [0,1,1,1,0, 1,0,0,0,1, 1,0,0,0,1, 1,0,0,0,1, 0,1,1,1,0]
+p1 = [0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0]
+p2 = [0,1,1,1,1, 1,0,0,1,0, 0,0,1,0,0, 0,1,0,0,0, 1,1,1,1,1]
+p3 = [0,1,1,1,0, 1,0,0,0,1, 0,0,1,1,0, 1,0,0,0,1, 0,1,1,1,0]
+p4 = [0,0,1,0,0, 0,1,0,0,0, 1,0,0,1,0, 1,1,1,1,1, 0,0,0,1,0]
 
 class Image:
   def __init__(self, image):
@@ -20,7 +28,24 @@ class Image:
     print("")
 
   def classify(self):
-    print("classify the image!")
+    d0 = 0;
+    for i in range(0,24):
+      d0 += (p0[i]-self.image[i])**2
+    d1 = 0;
+    for i in range(0,24):
+      d1 += (p1[i]-self.image[i])**2
+    d2 = 0;
+    for i in range(0,24):
+      d2 += (p2[i]-self.image[i])**2
+    d3 = 0;
+    for i in range(0,24):
+      d3 += (p3[i]-self.image[i])**2
+    d4 = 0;
+    for i in range(0,24):
+      d4 += (p4[i]-self.image[i])**2
+    x = np.array([d0, d1, d2, d3, d4])
+    print("The number of image is %d" % np.argmax(x))
 
 image1 = Image([1,0,1,1,0,1,1,0,0,1,1,1,1,0,0,0,0,0,1,1,0,1,1,1,0])
 image1.draw()
+image1.classify()
