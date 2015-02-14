@@ -43,9 +43,17 @@ class Image:
     d4 = 0;
     for i in range(0,24):
       d4 += (p4[i]-self.image[i])**2
-    x = np.array([d0, d1, d2, d3, d4])
-    print("The number of image is %d" % np.argmax(x))
 
-image1 = Image([1,0,1,1,0,1,1,0,0,1,1,1,1,0,0,0,0,0,1,1,0,1,1,1,0])
+# print the distances
+    # print(d0)
+    # print(d1)
+    # print(d2)
+    # print(d3)
+    # print(d4)
+
+    x = np.array([d0, d1, d2, d3, d4])
+    print("The number of image is %d" % np.argmin(x))
+
+image1 = Image([0,0,0,1,0, 0,0,0,1,0, 0,0,0,1,0, 0,0,0,1,0, 0,0,0,1,0])
 image1.draw()
 image1.classify()
