@@ -3,22 +3,24 @@ import numpy as np
 import math
 from matplotlib import pyplot as plt
 
-# sys.stdout.write("Input First Vector: ")
-# p[0] = input()
-# sys.stdout.write("Input Second Vector: ")
-# p[1] = input()
-# sys.stdout.write("Input Third Vector: ")
-# p[2] = input()
-# sys.stdout.write("Input Fourth Vector: ")
-# p[3] = input()
+p = [[0,0]] * 4
+# Input Prototype Vectors 
+sys.stdout.write("Input First Vector: ")
+p[0] = input()
+sys.stdout.write("Input Second Vector: ")
+p[1] = input()
+sys.stdout.write("Input Third Vector: ")
+p[2] = input()
+sys.stdout.write("Input Fourth Vector: ")
+p[3] = input()
 
 
 # Prototype Vectors 
-p = [[0,0]] * 4
-p[0] = [3,2]
-p[1] = [3,4]
-p[2] = [5,4]
-p[3] = [5,6]
+# p = [[0,0]] * 4
+# p[0] = [3,2]
+# p[1] = [3,4]
+# p[2] = [5,4]
+# p[3] = [5,6]
 
 print p[0]
 print p[1]
@@ -81,11 +83,12 @@ for i in range(0,4):
 plt.title('Vecotors / Normalized Vectors')
 plt.xlabel('x[1]')
 plt.ylabel('x[2]')
-plt.xlim(0,8)
-plt.ylim(0,8)
+plt.xlim(0,12)
+plt.ylim(0,12)
 plt.plot(px, py, "ro", label='vector')
 plt.plot(xx, xy, "go", label='Normalized')
 # plt.plot(virginica_sepal_length, virginica_sepal_width, "bo", label='virginica')
 plt.legend()
 
 plt.show()
+
